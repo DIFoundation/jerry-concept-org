@@ -24,3 +24,11 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.button {
+  font-weight: bolder;
+  color: aliceblue;
+  background-color: #1c398e;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
