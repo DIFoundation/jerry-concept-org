@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Navbar() {
   return (
-    <nav className="fixed bg-white text-blue-900 px-20 py-6 shadow w-full z-0 ">
+    <nav className="fixed bg-foreground text-blue-900 px-20 py-6 shadow w-full z-0 ">
       <div className="max-w-screen mx-auto flex justify-between items-center">
         <h1 className="text-2xl font-bold">CyberCenter</h1>
         <div className="space-x-6 text-xl font-semibold">

@@ -13,7 +13,7 @@ function HeroSection() {
       </p>
       <div className='space-x-36 mt-10'>
         <Link href='/' className='button border-2'>Learn More</Link>
-        <Link href='/' className=' bg-white text-blue-900 button'>Pricing</Link>
+        <Link href='/' className=' bg-foreground text-blue-900 button'>Pricing</Link>
       </div>
       
     </div>
