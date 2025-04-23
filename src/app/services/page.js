@@ -1,5 +1,4 @@
 import ServiceCard from '@/components/ServiceCard';
-import { services } from '@/data/Services';
 
 export default function Services() {
   return (
