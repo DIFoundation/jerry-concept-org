@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #fef3c6;
 }
 
 @theme inline {
@@ -27,8 +27,6 @@ body {
 
 .button {
   font-weight: bolder;
-  color: aliceblue;
-  background-color: #1c398e;
   padding: 10px 20px;
   border-radius: 5px;
 }
