@@ -24,7 +24,7 @@ const Navbar = () => {
     <header className="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-sm border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <span className="font-bold text-2xl text-jerry-700">Jerry Concept</span>
+          <span className="font-bold text-2xl text-blue-700">Jerry Concept</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -33,12 +33,12 @@ const Navbar = () => {
             <Link
               key={item.path}
               href={item.path}
-              className="text-base font-medium text-gray-700 hover:text-jerry-700 transition-colors"
+              className="text-base font-medium text-gray-700 hover:text-blue-700 transition-colors"
             >
               {item.name}
             </Link>
           ))}
-          <Button asChild className="bg-jerry-700 hover:bg-jerry-800">
+          <Button asChild className="bg-blue-700 hover:bg-blue-800">
             <Link href="/contact">Get Started</Link>
           </Button>
         </nav>
@@ -63,7 +63,7 @@ const Navbar = () => {
         <div className="container mx-auto px-4 py-8">
           <div className="flex justify-between items-center mb-8">
             <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
-              <span className="font-bold text-2xl text-jerry-700">Jerry Concept</span>
+              <span className="font-bold text-2xl text-blue-700">Jerry Concept</span>
             </Link>
             <button
               className="p-2 text-gray-700"
@@ -78,7 +78,7 @@ const Navbar = () => {
               <Link
                 key={item.path}
                 href={item.path}
-                className="text-lg font-medium text-gray-700 hover:text-jerry-700 transition-colors"
+                className="text-lg font-medium text-gray-700 hover:text-blue-700 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
@@ -86,7 +86,7 @@ const Navbar = () => {
             ))}
             <Button 
               asChild 
-              className="bg-jerry-700 hover:bg-jerry-800 w-full mt-4"
+              className="bg-blue-700 hover:bg-blue-800 w-full mt-4"
               onClick={() => setIsMenuOpen(false)}
             >
               <Link href="/contact">Get Started</Link>

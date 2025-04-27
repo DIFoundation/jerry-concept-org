@@ -27,7 +27,7 @@ const App = () => (
               <p className="text-gray-600 mb-6">
                 Our cyber café offers a comfortable environment for all your computing needs, while our training programs are designed to equip you with in-demand tech skills for today&apos;s digital world.
               </p>
-              <Button asChild className="bg-jerry-700 hover:bg-jerry-800">
+              <Button asChild className="bg-blue-700 hover:bg-blue-800">
                 <Link href="/about">Learn More About Us</Link>
               </Button>
             </div>
@@ -66,7 +66,7 @@ const App = () => (
           </div>
 
           <div className="text-center mt-12">
-            <Button asChild className="bg-jerry-700 hover:bg-jerry-800">
+            <Button asChild className="bg-blue-700 hover:bg-blue-800">
               <Link href="/services">View All Services</Link>
             </Button>
           </div>
@@ -95,14 +95,14 @@ const App = () => (
                 />
                 <div className="p-6">
                   <div className="flex justify-between items-center mb-3">
-                    <span className="bg-jerry-100 text-jerry-800 text-xs px-2 py-1 rounded">
+                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
                       {course.level}
                     </span>
                     <span className="text-gray-500 text-sm">{course.duration}</span>
                   </div>
                   <h3 className="font-semibold text-xl mb-2">{course.title}</h3>
                   <p className="text-gray-600 mb-4">{course.description}</p>
-                  <Button asChild className="w-full bg-jerry-700 hover:bg-jerry-800">
+                  <Button asChild className="w-full bg-blue-700 hover:bg-blue-800">
                     <Link href="/contact?course=enrollment">Enroll Now</Link>
                   </Button>
                 </div>
@@ -111,7 +111,7 @@ const App = () => (
           </div>
 
           <div className="text-center mt-12">
-            <Button asChild variant="outline" className="border-jerry-700 text-jerry-700 hover:bg-jerry-50">
+            <Button asChild variant="outline" className="border-blue-700 text-blue-700 hover:bg-blue-50">
               <Link href="/training">View All Courses</Link>
             </Button>
           </div>
@@ -126,14 +126,14 @@ const App = () => (
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-4 bg-jerry-700 text-white">
+      <section className="py-20 px-4 bg-blue-700 text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Visit our cyber café today or enroll in one of our training programs to begin your tech journey with Jerry Concept Organization.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild size="lg" className="bg-white text-jerry-700 hover:bg-gray-100">
+            <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-gray-100">
               <Link href="/contact">Visit Us Today</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">

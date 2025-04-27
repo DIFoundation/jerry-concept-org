@@ -8,7 +8,7 @@ const ContactInfo = () => {
       
       <div className="space-y-6">
         <div className="flex items-start gap-4">
-          <div className="bg-jerry-100 rounded-full p-3 text-jerry-700">
+          <div className="bg-blue-100 rounded-full p-3 text-blue-700">
             <MapPin size={24} />
           </div>
           <div>
@@ -19,7 +19,7 @@ const ContactInfo = () => {
         </div>
         
         <div className="flex items-start gap-4">
-          <div className="bg-jerry-100 rounded-full p-3 text-jerry-700">
+          <div className="bg-blue-100 rounded-full p-3 text-blue-700">
             <Phone size={24} />
           </div>
           <div>
@@ -30,7 +30,7 @@ const ContactInfo = () => {
         </div>
         
         <div className="flex items-start gap-4">
-          <div className="bg-jerry-100 rounded-full p-3 text-jerry-700">
+          <div className="bg-blue-100 rounded-full p-3 text-blue-700">
             <Mail size={24} />
           </div>
           <div>

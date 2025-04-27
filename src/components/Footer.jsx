@@ -39,15 +39,15 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
             <div className="space-y-2">
               <p className="flex items-center gap-2 text-gray-300">
-                <MapPin size={18} className="text-jerry-300" /> 
+                <MapPin size={18} className="text-blue-300" /> 
                 123 Tech Street, City Name
               </p>
               <p className="flex items-center gap-2 text-gray-300">
-                <Phone size={18} className="text-jerry-300" /> 
+                <Phone size={18} className="text-blue-300" /> 
                 +234 123 456 7890
               </p>
               <p className="flex items-center gap-2 text-gray-300">
-                <Mail size={18} className="text-jerry-300" /> 
+                <Mail size={18} className="text-blue-300" /> 
                 info@jerryconcept.com
               </p>
             </div>

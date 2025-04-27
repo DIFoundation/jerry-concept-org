@@ -61,7 +61,7 @@ const TestimonialCarousel = () => {
                   <img 
                     src={testimonial.image} 
                     alt={testimonial.name}
-                    className="w-full h-full object-cover rounded-full border-4 border-jerry-100"
+                    className="w-full h-full object-cover rounded-full border-4 border-blue-100"
                   />
                 </div>
                 <div className="flex-1">
@@ -69,7 +69,7 @@ const TestimonialCarousel = () => {
                     <p className="italic text-gray-700">"{testimonial.content}"</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-jerry-800">{testimonial.name}</h4>
+                    <h4 className="font-semibold text-blue-800">{testimonial.name}</h4>
                     <p className="text-sm text-gray-600">{testimonial.role}</p>
                   </div>
                 </div>
@@ -95,7 +95,7 @@ const TestimonialCarousel = () => {
             onClick={() => setActiveIndex(index)}
             className={cn(
               "w-2 h-2 rounded-full mx-1",
-              index === activeIndex ? "bg-jerry-700" : "bg-gray-300"
+              index === activeIndex ? "bg-blue-700" : "bg-gray-300"
             )}
             aria-label={`Go to slide ${index + 1}`}
           />

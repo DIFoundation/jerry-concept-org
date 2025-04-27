@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="relative bg-jerry-950 text-white overflow-hidden">
+    <section className="relative bg-blue-950 text-white overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#60A5FA_1px,transparent_1px)] [background-size:20px_20px]"></div>
 
@@ -17,7 +17,7 @@ const Hero = () => {
             Jerry Concept Organization provides premium computer services and tech education to empower your digital journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{animationDelay: "400ms"}}>
-            <Button asChild size="lg" className="bg-jerry-600 hover:bg-jerry-700">
+            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
               <Link href="/services">Explore Services</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
