@@ -131,7 +131,7 @@ const Training = () => {
                   <td className="px-6 py-4">₦25,000</td>
                   <td className="px-6 py-4">
                     <Button asChild size="sm" className="bg-jerry-700 hover:bg-jerry-800">
-                      <Link href="/contact?course=basic">Enroll</Link>
+                      <Link href="/contact?course=Basic Computer Skills">Enroll</Link>
                     </Button>
                   </td>
                 </tr>
@@ -143,7 +143,7 @@ const Training = () => {
                   <td className="px-6 py-4">₦35,000</td>
                   <td className="px-6 py-4">
                     <Button asChild size="sm" className="bg-jerry-700 hover:bg-jerry-800">
-                      <Link href="/contact?course=office">Enroll</Link>
+                      <Link href="/contact?course=Microsoft Office Suite">Enroll</Link>
                     </Button>
                   </td>
                 </tr>
@@ -155,7 +155,7 @@ const Training = () => {
                   <td className="px-6 py-4">₦50,000</td>
                   <td className="px-6 py-4">
                     <Button asChild size="sm" className="bg-jerry-700 hover:bg-jerry-800">
-                      <Link href="/contact?course=design">Enroll</Link>
+                      <Link href="/contact?course=Graphic Design">Enroll</Link>
                     </Button>
                   </td>
                 </tr>
@@ -167,7 +167,7 @@ const Training = () => {
                   <td className="px-6 py-4">₦75,000</td>
                   <td className="px-6 py-4">
                     <Button asChild size="sm" className="bg-jerry-700 hover:bg-jerry-800">
-                      <Link href="/contact?course=web">Enroll</Link>
+                      <Link href="/contact?course=Web Development">Enroll</Link>
                     </Button>
                   </td>
                 </tr>

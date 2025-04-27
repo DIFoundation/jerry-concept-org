@@ -1,5 +1,5 @@
 'use client';
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,10 +7,11 @@ import { CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import ContactInfo from "@/components/ContactInfo";
 import { useSearchParams } from "next/navigation";
+import CourseSubject from "@/hooks/courseSubject";
 
 const Contact = () => {
   const searchParams = useSearchParams();
-  const course = searchParams.get("course");
+  const course = searchParams.get("title");
 
   const { toast } = useToast();
   const [formState, setFormState] = useState({
@@ -22,6 +23,13 @@ const Contact = () => {
     submitting: false,
     submitted: false,
   });
+
+  const handleSetSubject = (subject) => {
+    setFormState((prev) => ({
+      ...prev,
+      subject,
+    }));
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,6 +61,11 @@ const Contact = () => {
 
   return (
     <div>
+
+<Suspense fallback={null}>
+        <CourseSubject onSetSubject={handleSetSubject} />
+      </Suspense>
+
       {/* Contact Hero */}
       <section className="bg-jerry-950 text-white py-20 px-4">
         <div className="container mx-auto text-center">
