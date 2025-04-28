@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const CourseCard = ({ title, description, duration, level, image }) => {
+
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all border border-gray-100 flex flex-col h-full">
       <div className="h-48 overflow-hidden">
@@ -23,7 +24,7 @@ const CourseCard = ({ title, description, duration, level, image }) => {
         <h3 className="text-xl font-semibold mb-3 text-gray-900">{title}</h3>
         <p className="text-gray-600 mb-6 flex-grow">{description}</p>
         <Button asChild className="w-full bg-blue-700 hover:bg-blue-800">
-          <Link href="/contact?course=enrollment">Enroll Now</Link>
+          <Link href={`/contact?course=${title}`}>Enroll Now</Link>
         </Button>
       </div>
     </div>

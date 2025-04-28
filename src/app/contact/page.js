@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useState, Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -61,17 +61,17 @@ const Contact = () => {
 
   return (
     <div>
-
-<Suspense fallback={null}>
+      <Suspense fallback={null}>
         <CourseSubject onSetSubject={handleSetSubject} />
       </Suspense>
 
       {/* Contact Hero */}
-      <section className="bg-jerry-950 text-white py-20 px-4">
+      <section className="bg-blue-950 text-white py-20 px-4">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-bold mb-6">Contact Us</h1>
           <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-300">
-            Get in touch with our team for more information about our services and training programs.
+            Get in touch with our team for more information about our services
+            and training programs.
           </p>
         </div>
       </section>
@@ -83,7 +83,8 @@ const Contact = () => {
             <div>
               <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
               <p className="text-gray-600 mb-8">
-                Fill out the form below and our team will get back to you as soon as possible.
+                Fill out the form below and our team will get back to you as
+                soon as possible.
               </p>
 
               {formState.submitted ? (
@@ -91,13 +92,18 @@ const Contact = () => {
                   <div className="flex justify-center mb-4">
                     <CheckCircle className="text-green-600" size={48} />
                   </div>
-                  <h3 className="text-2xl font-semibold text-green-800 mb-2">Thank You!</h3>
+                  <h3 className="text-2xl font-semibold text-green-800 mb-2">
+                    Thank You!
+                  </h3>
                   <p className="text-green-700">
-                    Your message has been sent successfully. We&apos;ll get back to you shortly.
+                    Your message has been sent successfully. We&apos;ll get back
+                    to you shortly.
                   </p>
-                  <Button 
-                    className="mt-6 bg-jerry-700 hover:bg-jerry-800"
-                    onClick={() => setFormState(prev => ({ ...prev, submitted: false }))}
+                  <Button
+                    className="mt-6 bg-blue-700 hover:bg-blue-800"
+                    onClick={() =>
+                      setFormState((prev) => ({ ...prev, submitted: false }))
+                    }
                   >
                     Send Another Message
                   </Button>
@@ -105,7 +111,10 @@ const Contact = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Full Name
                     </label>
                     <Input
@@ -120,7 +129,10 @@ const Contact = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700 mb-1"
+                      >
                         Email Address
                       </label>
                       <Input
@@ -134,7 +146,10 @@ const Contact = () => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-gray-700 mb-1"
+                      >
                         Phone Number
                       </label>
                       <Input
@@ -149,7 +164,10 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="subject"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Subject
                     </label>
                     <Input
@@ -163,7 +181,10 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Message
                     </label>
                     <Textarea
@@ -177,9 +198,9 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-jerry-700 hover:bg-jerry-800"
+                  <Button
+                    type="submit"
+                    className="w-full bg-blue-700 hover:bg-blue-800"
                     disabled={formState.submitting}
                   >
                     {formState.submitting ? "Sending..." : "Send Message"}
@@ -194,7 +215,7 @@ const Contact = () => {
               <div className="mt-12">
                 <h3 className="text-2xl font-semibold mb-6">Our Location</h3>
                 <div className="bg-gray-200 rounded-lg overflow-hidden h-80">
-                  {/* Map iframe would go here */}
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d987.3569989887434!2d4.2633029!3d8.1595611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10370da61768044d%3A0x1c73eecf3ce19bd6!2sKenny%20Concept%20Cyber%20Cafe!5e0!3m2!1sen!2sng!4v1745841219978!5m2!1sen!2sng" width="650" height="450" className="border-0" loading="lazy"></iframe>
                   <div className="w-full h-full flex items-center justify-center bg-gray-300">
                     <p className="text-gray-600">Map Placeholder</p>
                   </div>
@@ -209,38 +230,57 @@ const Contact = () => {
       <section className="py-20 px-4 bg-gray-50">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              Frequently Asked Questions
+            </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Find answers to the most common questions about our services and training programs.
+              Find answers to the most common questions about our services and
+              training programs.
             </p>
           </div>
 
           <div className="max-w-3xl mx-auto space-y-6">
             <div className="bg-white rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold mb-2">What are your operating hours?</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                What are your operating hours?
+              </h3>
               <p className="text-gray-600">
-                We are open Monday to Friday from 8:00 AM to 6:00 PM, and Saturday from 9:00 AM to 4:00 PM. We are closed on Sundays and public holidays.
+                We are open Monday to Friday from 8:00 AM to 6:00 PM, and
+                Saturday from 9:00 AM to 4:00 PM. We are closed on Sundays and
+                public holidays.
               </p>
             </div>
 
             <div className="bg-white rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold mb-2">Do I need to bring my own computer for training?</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Do I need to bring my own computer for training?
+              </h3>
               <p className="text-gray-600">
-                No, we provide computers for all our training sessions. However, you&apos;re welcome to bring your own laptop if you prefer working on your personal device.
+                No, we provide computers for all our training sessions. However,
+                you&apos;re welcome to bring your own laptop if you prefer
+                working on your personal device.
               </p>
             </div>
 
             <div className="bg-white rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold mb-2">How do I pay for services or enroll in courses?</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                How do I pay for services or enroll in courses?
+              </h3>
               <p className="text-gray-600">
-                We accept cash, bank transfers, and mobile payments. For course enrollment, a 50% deposit is required to secure your spot, with the balance due before the start of the course.
+                We accept cash, bank transfers, and mobile payments. For course
+                enrollment, a 50% deposit is required to secure your spot, with
+                the balance due before the start of the course.
               </p>
             </div>
 
             <div className="bg-white rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold mb-2">Do you offer customized training for companies?</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Do you offer customized training for companies?
+              </h3>
               <p className="text-gray-600">
-                Yes, we offer customized training programs for businesses and organizations. Please contact us to discuss your specific requirements and we&apos;ll create a tailored solution.
+                Yes, we offer customized training programs for businesses and
+                organizations. Please contact us to discuss your specific
+                requirements and we&apos;ll create a tailored solution.
               </p>
             </div>
           </div>

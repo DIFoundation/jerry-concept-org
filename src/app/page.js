@@ -103,7 +103,7 @@ const App = () => (
                   <h3 className="font-semibold text-xl mb-2">{course.title}</h3>
                   <p className="text-gray-600 mb-4">{course.description}</p>
                   <Button asChild className="w-full bg-blue-700 hover:bg-blue-800">
-                    <Link href="/contact?course=enrollment">Enroll Now</Link>
+                    <Link href={`/contact?course=${course.title}`}>Enroll Now</Link>
                   </Button>
                 </div>
               </div>
