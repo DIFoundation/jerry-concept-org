@@ -6,19 +6,16 @@ import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import ContactInfo from "@/components/ContactInfo";
-import { useSearchParams } from "next/navigation";
 import CourseSubject from "@/hooks/courseSubject";
 
 const Contact = () => {
-  const searchParams = useSearchParams();
-  const course = searchParams.get("title");
-
   const { toast } = useToast();
+  
   const [formState, setFormState] = useState({
     name: "",
     email: "",
     phone: "",
-    subject: course ? `Course Enrollment: ${course}` : "",
+    subject: "",
     message: "",
     submitting: false,
     submitted: false,
@@ -41,16 +38,15 @@ const Contact = () => {
     setFormState((prev) => ({ ...prev, submitting: true }));
 
     setTimeout(() => {
-      setFormState((prev) => ({
-        ...prev,
-        submitting: false,
-        submitted: true,
+      setFormState({
         name: "",
         email: "",
         phone: "",
         subject: "",
         message: "",
-      }));
+        submitting: false,
+        submitted: true,
+      });
 
       toast({
         title: "Message Sent!",
@@ -61,7 +57,8 @@ const Contact = () => {
 
   return (
     <div>
-      <Suspense fallback={null}>
+      {/* Handle Course Title from Search Params */}
+      <Suspense fallback={<p className="text-center text-gray-500">Loading course info...</p>}>
         <CourseSubject onSetSubject={handleSetSubject} />
       </Suspense>
 
@@ -96,14 +93,11 @@ const Contact = () => {
                     Thank You!
                   </h3>
                   <p className="text-green-700">
-                    Your message has been sent successfully. We&apos;ll get back
-                    to you shortly.
+                    Your message has been sent successfully. We&apos;ll get back to you shortly.
                   </p>
                   <Button
                     className="mt-6 bg-blue-700 hover:bg-blue-800"
-                    onClick={() =>
-                      setFormState((prev) => ({ ...prev, submitted: false }))
-                    }
+                    onClick={() => setFormState((prev) => ({ ...prev, submitted: false }))}
                   >
                     Send Another Message
                   </Button>
@@ -111,10 +105,7 @@ const Contact = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                       Full Name
                     </label>
                     <Input
@@ -129,10 +120,7 @@ const Contact = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                         Email Address
                       </label>
                       <Input
@@ -146,10 +134,7 @@ const Contact = () => {
                       />
                     </div>
                     <div>
-                      <label
-                        htmlFor="phone"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                         Phone Number
                       </label>
                       <Input
@@ -164,10 +149,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label
-                      htmlFor="subject"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
                       Subject
                     </label>
                     <Input
@@ -181,10 +163,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                       Message
                     </label>
                     <Textarea
@@ -215,10 +194,13 @@ const Contact = () => {
               <div className="mt-12">
                 <h3 className="text-2xl font-semibold mb-6">Our Location</h3>
                 <div className="bg-gray-200 rounded-lg overflow-hidden h-80">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d987.3569989887434!2d4.2633029!3d8.1595611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10370da61768044d%3A0x1c73eecf3ce19bd6!2sKenny%20Concept%20Cyber%20Cafe!5e0!3m2!1sen!2sng!4v1745841219978!5m2!1sen!2sng" width="650" height="450" className="border-0" loading="lazy"></iframe>
-                  <div className="w-full h-full flex items-center justify-center bg-gray-300">
-                    <p className="text-gray-600">Map Placeholder</p>
-                  </div>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d987.3569989887434!2d4.2633029!3d8.1595611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10370da61768044d%3A0x1c73eecf3ce19bd6!2sKenny%20Concept%20Cyber%20Cafe!5e0!3m2!1sen!2sng!4v1745841219978!5m2!1sen!2sng"
+                    width="650"
+                    height="450"
+                    className="border-0 w-full h-full"
+                    loading="lazy"
+                  ></iframe>
                 </div>
               </div>
             </div>
@@ -240,49 +222,7 @@ const Contact = () => {
           </div>
 
           <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold mb-2">
-                What are your operating hours?
-              </h3>
-              <p className="text-gray-600">
-                We are open Monday to Friday from 8:00 AM to 6:00 PM, and
-                Saturday from 9:00 AM to 4:00 PM. We are closed on Sundays and
-                public holidays.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold mb-2">
-                Do I need to bring my own computer for training?
-              </h3>
-              <p className="text-gray-600">
-                No, we provide computers for all our training sessions. However,
-                you&apos;re welcome to bring your own laptop if you prefer
-                working on your personal device.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold mb-2">
-                How do I pay for services or enroll in courses?
-              </h3>
-              <p className="text-gray-600">
-                We accept cash, bank transfers, and mobile payments. For course
-                enrollment, a 50% deposit is required to secure your spot, with
-                the balance due before the start of the course.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-semibold mb-2">
-                Do you offer customized training for companies?
-              </h3>
-              <p className="text-gray-600">
-                Yes, we offer customized training programs for businesses and
-                organizations. Please contact us to discuss your specific
-                requirements and we&apos;ll create a tailored solution.
-              </p>
-            </div>
+            {/* FAQs here */}
           </div>
         </div>
       </section>

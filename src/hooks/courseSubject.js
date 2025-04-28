@@ -1,15 +1,18 @@
-'use client';
-import { useSearchParams } from 'next/navigation';
+"use client";
+import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 const CourseSubject = ({ onSetSubject }) => {
   const searchParams = useSearchParams();
-  const course = searchParams.get("course");
+  const title = searchParams.get("title");
 
-  if (course) {
-    onSetSubject(`Course Enrollment: ${course}`);
-  }
+  useEffect(() => {
+    if (title) {
+      onSetSubject(`Course Enrollment: ${title}`);
+    }
+  }, [title, onSetSubject]);
 
-  return null; // No UI
+  return null; // No UI to render
 };
 
 export default CourseSubject;
