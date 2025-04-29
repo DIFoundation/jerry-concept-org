@@ -38,7 +38,7 @@ const Navbar = () => {
               {item.name}
             </Link>
           ))}
-          <Button asChild className="bg-blue-700 hover:bg-blue-800">
+          <Button asChild className="bg-blue-700 text-white hover:bg-blue-800">
             <Link href="/contact">Get Started</Link>
           </Button>
         </nav>
@@ -57,10 +57,10 @@ const Navbar = () => {
       <div
         className={cn(
           "md:hidden fixed inset-0 bg-white z-50 transform transition-transform duration-300 ease-in-out",
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
+          isMenuOpen ? "translate-x-0" : "hidden"
         )}
       >
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-4 bg-white rounded-b-xl">
           <div className="flex justify-between items-center mb-8">
             <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
               <span className="font-bold text-2xl text-blue-700">Jerry Concept</span>

@@ -7,10 +7,12 @@ import { CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import ContactInfo from "@/components/ContactInfo";
 import CourseSubject from "@/hooks/courseSubject";
+import { faq } from "@/data/faq";
 
 const Contact = () => {
   const { toast } = useToast();
-  
+  const QandA = faq;
+
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -57,8 +59,11 @@ const Contact = () => {
 
   return (
     <div>
-      {/* Handle Course Title from Search Params */}
-      <Suspense fallback={<p className="text-center text-gray-500">Loading course info...</p>}>
+      <Suspense
+        fallback={
+          <p className="text-center text-gray-500">Loading course info...</p>
+        }
+      >
         <CourseSubject onSetSubject={handleSetSubject} />
       </Suspense>
 
@@ -93,11 +98,14 @@ const Contact = () => {
                     Thank You!
                   </h3>
                   <p className="text-green-700">
-                    Your message has been sent successfully. We&apos;ll get back to you shortly.
+                    Your message has been sent successfully. We&apos;ll get back
+                    to you shortly.
                   </p>
                   <Button
-                    className="mt-6 bg-blue-700 hover:bg-blue-800"
-                    onClick={() => setFormState((prev) => ({ ...prev, submitted: false }))}
+                    className="mt-6 bg-blue-700 text-white hover:bg-blue-800"
+                    onClick={() =>
+                      setFormState((prev) => ({ ...prev, submitted: false }))
+                    }
                   >
                     Send Another Message
                   </Button>
@@ -105,7 +113,10 @@ const Contact = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Full Name
                     </label>
                     <Input
@@ -120,7 +131,10 @@ const Contact = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700 mb-1"
+                      >
                         Email Address
                       </label>
                       <Input
@@ -134,7 +148,10 @@ const Contact = () => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-gray-700 mb-1"
+                      >
                         Phone Number
                       </label>
                       <Input
@@ -149,7 +166,10 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="subject"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Subject
                     </label>
                     <Input
@@ -163,7 +183,10 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Message
                     </label>
                     <Textarea
@@ -179,13 +202,18 @@ const Contact = () => {
 
                   <Button
                     type="submit"
-                    className="w-full bg-blue-700 hover:bg-blue-800"
+                    className="w-full bg-blue-700 text-white hover:bg-blue-800"
                     disabled={formState.submitting}
                   >
                     {formState.submitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               )}
+              <div className="mt-8 flex flex-row items-center">
+                <p className="py-2 px-2 bg-green-300/50 text-green-900 font-bold rounded-l-lg">N.B</p>
+                <marquee className= "py-2 px-5 bg-green-200/50 text-green-700 rounded-r-lg ">For Industrial training or SIWES programme, send your application throug mail and attach all neccesary documents</marquee>
+              </div>
+             
             </div>
 
             <div>
@@ -222,7 +250,15 @@ const Contact = () => {
           </div>
 
           <div className="max-w-3xl mx-auto space-y-6">
-            {/* FAQs here */}
+            {QandA.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-lg p-6 shadow-md mb-6"
+              >
+                <h3 className="text-xl font-semibold mb-2">{item.question}</h3>
+                <p className="text-gray-600">{item.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

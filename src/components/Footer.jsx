@@ -40,15 +40,17 @@ const Footer = () => {
             <div className="space-y-2">
               <p className="flex items-center gap-2 text-gray-300">
                 <MapPin size={18} className="text-blue-300" /> 
-                123 Tech Street, City Name
+                Jolanis Shopping Complex, Under G, Ogbomoso, Oyo State
               </p>
               <p className="flex items-center gap-2 text-gray-300">
                 <Phone size={18} className="text-blue-300" /> 
-                +234 123 456 7890
+                +234 703 834 3578, +234 703 264 5181
               </p>
               <p className="flex items-center gap-2 text-gray-300">
                 <Mail size={18} className="text-blue-300" /> 
-                info@jerryconcept.com
+                <Link href="mailto:jerryconceptorganization@gmail.com" className="hover:text-white transition-colors">
+                jerryconceptorganization@gmail.com
+                </Link>
               </p>
             </div>
           </div>

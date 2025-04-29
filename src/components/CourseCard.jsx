@@ -23,7 +23,7 @@ const CourseCard = ({ title, description, duration, level, image }) => {
         </div>
         <h3 className="text-xl font-semibold mb-3 text-gray-900">{title}</h3>
         <p className="text-gray-600 mb-6 flex-grow">{description}</p>
-        <Button asChild className="w-full bg-blue-700 hover:bg-blue-800">
+        <Button asChild className="w-full bg-blue-700 text-white hover:bg-blue-800">
           <Link href={`/contact?course=${title}`}>Enroll Now</Link>
         </Button>
       </div>

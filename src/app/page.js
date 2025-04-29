@@ -27,7 +27,7 @@ const App = () => (
               <p className="text-gray-600 mb-6">
                 Our cyber café offers a comfortable environment for all your computing needs, while our training programs are designed to equip you with in-demand tech skills for today&apos;s digital world.
               </p>
-              <Button asChild className="bg-blue-700 hover:bg-blue-800">
+              <Button asChild className="bg-blue-700 text-white hover:bg-blue-800">
                 <Link href="/about">Learn More About Us</Link>
               </Button>
             </div>
@@ -66,7 +66,7 @@ const App = () => (
           </div>
 
           <div className="text-center mt-12">
-            <Button asChild className="bg-blue-700 hover:bg-blue-800">
+            <Button asChild className="bg-blue-700 text-white hover:bg-blue-800">
               <Link href="/services">View All Services</Link>
             </Button>
           </div>
@@ -102,7 +102,7 @@ const App = () => (
                   </div>
                   <h3 className="font-semibold text-xl mb-2">{course.title}</h3>
                   <p className="text-gray-600 mb-4">{course.description}</p>
-                  <Button asChild className="w-full bg-blue-700 hover:bg-blue-800">
+                  <Button asChild className="w-full bg-blue-700 text-white hover:bg-blue-800">
                     <Link href={`/contact?course=${course.title}`}>Enroll Now</Link>
                   </Button>
                 </div>

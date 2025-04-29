@@ -196,7 +196,7 @@ const Training = () => {
                         <Button
                           asChild
                           size="sm"
-                          className="bg-blue-700 hover:bg-blue-800"
+                          className="bg-blue-700 text-white hover:bg-blue-800"
                         >
                           <Link href={`/contact?course=${training.course}`}>
                             Enroll

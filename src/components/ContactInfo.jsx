@@ -13,7 +13,7 @@ const ContactInfo = () => {
           </div>
           <div>
             <h4 className="font-semibold text-gray-900 mb-1">Location</h4>
-            <p className="text-gray-600">123 Tech Street, City Name, State</p>
+            <p className="text-gray-600">Jolanis Shopping Complex, Ogbomoso</p>
             <p className="text-gray-600">Nigeria</p>
           </div>
         </div>
@@ -24,8 +24,8 @@ const ContactInfo = () => {
           </div>
           <div>
             <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-            <p className="text-gray-600">+234 123 456 7890</p>
-            <p className="text-gray-600">+234 987 654 3210</p>
+            <p className="text-gray-600">+234 703 834 3578</p>
+            <p className="text-gray-600">+234 703 264 5181</p>
           </div>
         </div>
         
@@ -35,8 +35,8 @@ const ContactInfo = () => {
           </div>
           <div>
             <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-            <p className="text-gray-600">info@jerryconcept.com</p>
-            <p className="text-gray-600">support@jerryconcept.com</p>
+            <p className="text-gray-600">jerryconceptorganization@gmail.com</p>
+            
           </div>
         </div>
       </div>
@@ -46,11 +46,11 @@ const ContactInfo = () => {
         <div className="space-y-1">
           <p className="flex justify-between">
             <span className="text-gray-600">Monday - Friday:</span>
-            <span className="text-gray-900">8:00 AM - 6:00 PM</span>
+            <span className="text-gray-900">8:00 AM - 8:00 PM</span>
           </p>
           <p className="flex justify-between">
             <span className="text-gray-600">Saturday:</span>
-            <span className="text-gray-900">9:00 AM - 4:00 PM</span>
+            <span className="text-gray-900">9:00 AM - 8:00 PM</span>
           </p>
           <p className="flex justify-between">
             <span className="text-gray-600">Sunday:</span>
